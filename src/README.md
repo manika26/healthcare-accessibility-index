@@ -107,9 +107,46 @@ Bottom 10 States:
 
 ---
 
+---
+
+### Machine Learning Model (Random Forest)
+We used a **Random Forest Regressor** to learn the importance of each feature in predicting access scores based on the manually defined scores.
+
+🔍 **Why Random Forest?**
+- It's interpretable: we can extract **feature importances**
+- Handles non-linearity and interactions between features
+- Doesn't require feature scaling
+
+The model was trained using:
+- Features: insured %, broadband %, income, facilities, travel time
+- Target: manually defined access scores
+
+We then used the trained model to:
+- Predict scores for each state
+- Identify which features contribute the most/least to access
+
+---
+
+###  Streamlit Dashboard
+An interactive Streamlit app lets users:
+- Visualize access scores across U.S. states
+- Select a state and compare **manual vs. model-predicted** scores
+- View contribution of each feature
+- See **recommendations** on which factors to improve
+
+---
+
+##  Running the App
+
+To run the dashboard:
+```bash
+ "streamlit run app/streamlit_app.py"
+
+
+---
 ## Future Work
 
-- Add interactive dashboard (Streamlit or Dash)
+- Add interactive dashboard (Streamlit or Dash) -> done
 - Expand to county-level access scoring
 - Add provider availability by specialty
 
@@ -117,6 +154,6 @@ Bottom 10 States:
 
 ## Maintainer
 
-Made with 💙 by [Manika Sharma](https://github.com/manika26)
+Made with by [Manika Sharma](https://github.com/manika26)
 
 ---
